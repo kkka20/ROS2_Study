@@ -8,9 +8,14 @@ setup(
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
+            ['resource/my_pkg']),
+        ('share/my_pkg', ['package.xml']),
+    # 下面这行改成，找到launch文件夹下面所有py文件
+        ('share/my_pkg/launch', [
+            'launch/demo.launch.py',
+        ]),
     ],
+
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='kkka',
